@@ -1,1 +1,1 @@
-# CursoTecnicoSenai
+# lista de atividades referentes a unidade curricular
