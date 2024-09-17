@@ -1,1 +1,1 @@
-# lista de atividades referentes a unidade curricular
+# Lista de atividades referentes a unidade curricular
