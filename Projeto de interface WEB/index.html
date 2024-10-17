@@ -2,14 +2,14 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Meu Site de Bateristas</title>
+    <title>Meu Site</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         .carousel-item img 
         {
             width: 100%;
-            height: 400px;
+            height: 800px;
             object-fit: cover;
             margin: 0 auto; 
         }
@@ -47,21 +47,24 @@
                         <a class="nav-link custom-nav-link" href="contato.html">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link custom-nav-link" href="#">Sobre</a>
+                        <a class="nav-link custom-nav-link" href="sobre.html">Sobre</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle custom-nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Marcas
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="mostrarTexto('A bateria, um dos instrumentos mais icônicos da música moderna, possui uma história rica e variada. Sua evolução ao longo dos séculos pode ser dividida em várias etapas. Origens Antigas: As raízes da bateria remontam a instrumentos de percussão primitivos, como tambores feitos de peles de animais e troncos ocos, utilizados em rituais e cerimônias por diversas culturas ao redor do mundo. Na antiga Mesopotâmia, Egito e China, os tambores tinham um papel significativo em celebrações e eventos militares. Século XIX: Durante o século XIX, os tambores começaram a ser incorporados em orquestras, dando origem aos primeiros conjuntos de percussão. O tambor de caixa, o bumbo e os pratos passaram a ser usados em bandas militares. Essa necessidade de mobilidade levou à criação de kits de bateria mais compactos, que podiam ser utilizados em apresentações ao vivo. Século XX: Nos anos 1920, o jazz ganhou popularidade, e os bateristas começaram a experimentar diferentes combinações de tambores e pratos. A bateria de jazz tornou-se um componente fundamental das bandas de jazz, com músicos como Buddy Rich e Gene Krupa ajudando a popularizá-la. Com a evolução do jazz e do rock, a bateria continuou a se desenvolver, incorporando novos materiais, técnicas e estilos. O uso de pratos suspensos e pedais duplos se tornou comum. Anos 60 e 70: A bateria se tornou central no rock and roll, com figuras como Ringo Starr (The Beatles), Keith Moon (The Who) e John Bonham (Led Zeppelin) redefinindo o papel do baterista nas bandas. Nesse período, os kits de bateria foram aprimorados, e novos sons e técnicas foram explorados, como a batida de 4/4 e a mistura de diferentes estilos. Anos 80 e 90: O surgimento da bateria eletrônica e dos samplers permitiu que os músicos experimentassem novos sons e estilos, levando à criação de gêneros como synth-pop e hip-hop. Bateristas influentes, como Neil Peart (Rush) e Dave Grohl (Nirvana), trouxeram novas abordagens e técnicas, misturando rock, punk e metal. Século XXI: A bateria continua a evoluir, refletindo a diversidade de estilos musicais, como funk, reggae e música eletrônica. Bateristas contemporâneos, como Benny Greb e Travis Barker, exploram novas técnicas e sonoridades. O uso de softwares de bateria e gravações digitais se tornou comum, permitindo que os músicos criem e experimentem com sons de maneira inovadora. Conclusão: A bateria é um instrumento que reflete as mudanças culturais e musicais ao longo do tempo. Sua versatilidade e expressividade fazem dela uma parte essencial de muitas formas de música contemporânea.')">História do instrumento</a></li>
+                            <li><a class="nav-link custom-nav-link" href="Gretsch.html">Gretsch</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#" onclick="mostrarTexto('')">Odery</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="mostrarTexto('A história da DW Drums, ou Drum Workshop, começa em 1972, quando Don Lombardi fundou a empresa como um estúdio de ensino. Para cobrir os custos de operação do estúdio, Lombardi e o aluno John Good iniciaram uma pequena operação de venda de equipamentos de bateria. A DW Drums é uma empresa americana especializada em design e fabricação de instrumentos de percussão. A sede da empresa está em Oxnard, Califórnia. A DW Drums é considerada uma das empresas de tambores customizados mais respeitadas do mundo. A empresa é conhecida por seus avanços inovadores nas qualidades tonais da madeira, e seus hardware e pedais são considerados o padrão da indústria. A DW Drums se destaca por seus instrumentos artesanais de alta qualidade, fabricados nos Estados Unidos. A empresa usa madeiras de tom de todo o mundo, construídas com orientações de grão variáveis, afinadas na fábrica e combinadas de timbre. A DW Drums começou a fabricar seus primeiros conjuntos de tambores em 1990, após a compra do equipamento de fabricação da Camco Drum Company, que fechou em 1977.')">DW</a></li>
+                            <li><a class="nav-link custom-nav-link" href="Odery.html">Odery</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="nav-link custom-nav-link" href="Dw.html">DW</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                                <li><a class="nav-link custom-nav-link" href="Nagano.html">Nagano</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Desabilitado</a>
+                        <a class="nav-link custom-nav-link" href="história.html">História do instrumento</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -74,19 +77,25 @@
 </header>
 <main> 
     <div class="container">
-        <h1>Site sobre Baterias</h1>
-        <p>Baterias do mundo.</p>
+        <h1>Baterias do mundo</h1>
+        <p></p>
         <div id="resultado" class="mt-3"></div>
         <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="2000">
-                    <img src="img/aaron-spears.jpg" class="d-block w-100" alt="Aaron Spears">
+                    <img src="img/DW-Bateria-Classics-01.jpg" class="d-block w-100" alt="Aaron Spears">
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="img/aquiles-priester.jpg" class="d-block w-100" alt="Aquiles Priester">
+                    <img src="img/images (1).png" class="d-block w-100" alt="Aquiles Priester">
                 </div>
                 <div class="carousel-item" data-bs-interval="2000">
-                    <img src="img/eloy-casagrande.jpg" class="d-block w-100" alt="Eloy Casagrande">
+                    <img src="img/logo.png" class="d-block w-100" alt="Eloy Casagrande">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/rmv-logo-B2C173DA45-seeklogo.com.png" class="d-block w-100" alt="Eloy Casagrande">
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img src="img/adesivo-bateria-odery-25x6-6cm-preto-rmv.jpg" class="d-block w-100" alt="Eloy Casagrande">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
