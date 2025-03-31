@@ -33,8 +33,8 @@ CREATE TABLE emprestimos (
 	id INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT,
     id_livro INT,
-    data_retirada TEXT,
-    data_devolucao TEXT,
+    data_retirada DATE,
+    data_devolucao DATE,
     status ENUM ('Em andamento', 'Concluído'),
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id),
     FOREIGN KEY (id_livro) REFERENCES livros(id)
