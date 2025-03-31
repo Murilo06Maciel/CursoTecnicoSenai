@@ -20,7 +20,6 @@ CREATE TABLE matriculas (
     id_aluno INT,
     id_plano INT,
     data_inicio DATE NOT NULL,
-    PRIMARY KEY (id_aluno, id_plano),
     FOREIGN KEY (id_aluno) REFERENCES alunos(id),
     FOREIGN KEY (id_plano) REFERENCES planos(id)
 );
