@@ -12,7 +12,7 @@ CREATE TABLE alunos (
 CREATE TABLE planos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
-    preco_mensal DECIMAL(10,2) NOT NULL
+    preco_mensal DECIMAL(5,2) NOT NULL
 );
 
 -- Criando a tabela de Matrículas
