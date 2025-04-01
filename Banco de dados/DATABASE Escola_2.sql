@@ -256,3 +256,22 @@ INSERT INTO Usuarios (Nome, Email, Senha, Tipo) VALUES
 ('Gabriel', 'gabriel@email.com', 'prof138', 'Professor'),
 ('Heloísa', 'heloisa@email.com', 'prof139', 'Professor'),
 ('Isabela', 'isabela@email.com', 'prof140', 'Professor');
+
+-- Atualizando um telefone de um aluno
+UPDATE Alunos SET Telefone = '(11) 99999-0000' WHERE Nome = 'Ana Souza';
+
+-- Atualizando status de pagamento de alunos que pagaram recentemente
+UPDATE Pagamentos SET Status = 'Pago' WHERE Status = 'Pendente';
+
+-- Alterando a especialidade de um professor
+UPDATE Professores SET Especialidade = 'Física' WHERE Nome = 'Marcos Silva';
+
+-- Removendo um aluno que desistiu do curso
+DELETE FROM Matriculas WHERE AlunoID = 20;
+DELETE FROM Alunos WHERE AlunoID = 20;
+
+-- Removendo um professor que se aposentou
+DELETE FROM Professores WHERE Nome = 'Marcos Silva';
+
+-- Removendo um pagamento duplicado
+DELETE FROM Pagamentos WHERE AlunoID = 5 AND Status = 'Pendente';
