@@ -6,8 +6,8 @@ CREATE TABLE Alunos (
     ID_Aluno INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(100) NOT NULL,
     DataNascimento DATE NOT NULL,
-    Matricula VARCHAR(20) UNIQUE NOT NULL,
-    Email VARCHAR(100) UNIQUE,
+    Matricula VARCHAR(20) NOT NULL,
+    Email VARCHAR(100),
     Telefone VARCHAR(15),
     Endereco TEXT
 );
@@ -17,7 +17,7 @@ CREATE TABLE Professores (
     ID_Professor INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(100) NOT NULL,
     Especialidade VARCHAR(100),
-    Email VARCHAR(100) UNIQUE,
+    Email VARCHAR(100),
     Telefone VARCHAR(15)
 );
 
@@ -73,7 +73,7 @@ CREATE TABLE Notas (
 CREATE TABLE Usuarios (
     ID_Usuario INT PRIMARY KEY AUTO_INCREMENT,
     Nome VARCHAR(100) NOT NULL,
-    Email VARCHAR(100) UNIQUE NOT NULL,
+    Email VARCHAR(100) NOT NULL,
     Senha VARCHAR(255) NOT NULL,
     Tipo ENUM('Administrador', 'Secretaria', 'professor') NOT NULL
 );
