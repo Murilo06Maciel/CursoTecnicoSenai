@@ -75,5 +75,5 @@ CREATE TABLE Usuarios (
     Nome VARCHAR(100) NOT NULL,
     Email VARCHAR(100) NOT NULL,
     Senha VARCHAR(255) NOT NULL,
-    Tipo ENUM('Administrador', 'Secretaria', 'professores') NOT NULL
+    Tipo ENUM('Administrador', 'Secretaria', 'professor') NOT NULL
 );
