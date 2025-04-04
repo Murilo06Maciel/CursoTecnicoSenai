@@ -1,69 +1,41 @@
 CREATE DATABASE Nota_Fiscal;
 USE Nota_Fiscal;
 
--- Tabela de Dados_Da_Nota
-CREATE TABLE Alunos (
-    ID_Aluno INT PRIMARY KEY AUTO_INCREMENT,
-    Nome VARCHAR(100) NOT NULL,
-    DataNascimento DATE NOT NULL,
-    Matricula VARCHAR(20) NOT NULL,
-    Email VARCHAR(100),
-    Telefone VARCHAR(15),
-    Endereco TEXT
+CREATE TABLE Empresa (
+    ID_Empresa INT PRIMARY KEY AUTO_INCREMENT,
+    Nome_Empresa VARCHAR(100),
+    Razao_Social VARCHAR(100),
+    Telefone VARCHAR(20),
+    Endereco VARCHAR(255),
+    CF_DF VARCHAR(20),
+    CNPJ VARCHAR(20) UNIQUE
 );
 
--- Tabela de Dados_Para_Nota
-CREATE TABLE Professores (
-    Código INT PRIMARY KEY AUTO_INCREMENT,
-    Quantidade VARCHAR(100) NOT NULL,
-    Discrição VARCHAR(255),
-    Preço_Total VARCHAR(15)
+CREATE TABLE Cliente (
+    ID_Cliente INT PRIMARY KEY AUTO_INCREMENT,
+    Nome VARCHAR(100),
+    Endereco VARCHAR(255),
+    CPF VARCHAR(14) UNIQUE,
+    Telefone VARCHAR(20)
 );
 
--- Tabela de Cursos
-CREATE TABLE Cursos (
-    ID_Curso INT PRIMARY KEY AUTO_INCREMENT,
-    Nome VARCHAR(100) NOT NULL,
-    CargaHoraria INT NOT NULL
-);
-
--- Tabela de Turmas
-CREATE TABLE Turmas (
-    ID_Turma INT PRIMARY KEY AUTO_INCREMENT,
-    ID_Curso INT NOT NULL,
-    ID_Professor INT NOT NULL,
-    AnoLetivo YEAR NOT NULL,
-    FOREIGN KEY (ID_Curso) REFERENCES Cursos(ID_Curso) ON DELETE CASCADE,
-    FOREIGN KEY (ID_Professor) REFERENCES Professores(ID_Professor) ON DELETE SET NULL
-);
-
--- Tabela de Matrículas
-CREATE TABLE Matriculas (
-    ID_Matricula INT PRIMARY KEY AUTO_INCREMENT,
-    ID_Aluno INT NOT NULL,
-    ID_Turma INT NOT NULL,
-    DataMatricula DATE NOT NULL,
-    FOREIGN KEY (ID_Aluno) REFERENCES Alunos(ID_Aluno) ON DELETE CASCADE,
-    FOREIGN KEY (ID_Turma) REFERENCES Turmas(ID_Turma) ON DELETE CASCADE
-);
-
--- Tabela de Pagamentos
-CREATE TABLE Pagamentos (
-    ID_Pagamento INT PRIMARY KEY AUTO_INCREMENT,
-    ID_Aluno INT NOT NULL,
-    Valor DECIMAL(10,2) NOT NULL,
-    DataPagamento DATE NOT NULL,
-    Status ENUM('Pendente', 'Pago', 'Atrasado') DEFAULT 'Pendente',
-    FOREIGN KEY (ID_Aluno) REFERENCES Alunos(ID_Aluno) ON DELETE CASCADE
-);
-
--- Tabela de Notas
-CREATE TABLE Notas (
+CREATE TABLE NotaFiscal (
     ID_Nota INT PRIMARY KEY AUTO_INCREMENT,
-    ID_Aluno INT NOT NULL,
-    ID_Turma INT NOT NULL,
-    Nota DECIMAL(5,2) NOT NULL,
-    DataLancamento DATE NOT NULL,
-    FOREIGN KEY (ID_Aluno) REFERENCES Alunos(ID_Aluno) ON DELETE CASCADE,
-    FOREIGN KEY (ID_Turma) REFERENCES Turmas(ID_Turma) ON DELETE CASCADE
+    ID_Empresa INT,
+    ID_Cliente INT,
+    Data_Emissao DATE,
+    Valor_Total DECIMAL(10,2),
+    FOREIGN KEY (ID_Empresa) REFERENCES Empresa(ID_Empresa),
+    FOREIGN KEY (ID_Cliente) REFERENCES Cliente(ID_Cliente)
+);
+
+CREATE TABLE ItemNotaFiscal (
+    ID_Item INT PRIMARY KEY AUTO_INCREMENT,
+    ID_Nota INT,
+    Codigo_Produto VARCHAR(50),
+    Quantidade INT,
+    Descricao VARCHAR(255),
+    Preco_Unitario DECIMAL(10,2),
+    Preco_Total DECIMAL(10,2),
+    FOREIGN KEY (ID_Nota) REFERENCES NotaFiscal(ID_Nota)
 );
