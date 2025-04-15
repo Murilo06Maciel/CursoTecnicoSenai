@@ -9,17 +9,17 @@
   }
   
   .navbar {
-    background-color: #000985;
+    background-color: #052b5b;
   }
   
   .navbar .nav-link,
   .navbar .navbar-brand,
   .navbar-toggler {
-    color: rgb(255, 255, 255) !important;
+    color: #ff9100;
   }
   
   .navbar .nav-link:hover {
-    color: #ff9100 !important;
+    color: white;
   }
   
   .carousel-inner img {
@@ -66,4 +66,12 @@
     .carousel-inner img {
       height: 300px;
     }
+  }
+
+  .card-altura img {
+    width: 216px;
+    height: 216px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
   }
