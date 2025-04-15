@@ -2,3 +2,68 @@
     width: 50px;
     height: auto;
   }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .navbar {
+    background-color: #000985;
+  }
+  
+  .navbar .nav-link,
+  .navbar .navbar-brand,
+  .navbar-toggler {
+    color: rgb(255, 255, 255) !important;
+  }
+  
+  .navbar .nav-link:hover {
+    color: #ff9100 !important;
+  }
+  
+  .carousel-inner img {
+    height: 500px;
+    object-fit: cover;
+  }
+  
+  h2 {
+    font-weight: bold;
+    color: #003366;
+  }
+  
+  .card-title {
+    color: #003366;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    color: #555;
+  }
+  
+  .card a.btn {
+    background-color: #003366;
+    border: none;
+  }
+  
+  .card a.btn:hover {
+    background-color: #002244;
+  }
+  
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  footer small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+  }
+  @media (max-width: 768px) {
+    .carousel-inner img {
+      height: 300px;
+    }
+  }
