@@ -51,17 +51,12 @@
   }
   
   footer {
-    background-color: #003366;
-    color: white;
+    background-color: gray;
+    color: beige;
     text-align: center;
-    padding: 20px 0;
-  }
-  
-  footer small {
-    display: block;
-    margin-top: 5px;
-    font-size: 0.9rem;
-  }
+    font-size: 20pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
   @media (max-width: 768px) {
     .carousel-inner img {
       height: 300px;
