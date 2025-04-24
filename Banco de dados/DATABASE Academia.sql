@@ -35,8 +35,8 @@ CREATE TABLE aulas (
 CREATE TABLE presencas (
     id_aluno INT,
     id_aula INT,
-    data DATE NOT NULL,
-    PRIMARY KEY (id_aluno, id_aula, data),
+    data_presencas DATE NOT NULL,
+    PRIMARY KEY (id_aluno, id_aula, data_presencas),
     FOREIGN KEY (id_aluno) REFERENCES alunos(id),
     FOREIGN KEY (id_aula) REFERENCES aulas(id)
 );
