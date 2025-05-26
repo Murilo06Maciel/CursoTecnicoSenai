@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Para sua construção</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <!-- Navbar -->
+  <!-- Navbar azul -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <img src="/img/logo.jpg" class="d-block" alt="Logo" style="height: 50px; width: auto; max-width: 150px;">
@@ -17,12 +17,8 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="nossa_história.html">Nossa História</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="nossa_história.html">Nossa História</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Produtos</a>
             <ul class="dropdown-menu">
@@ -40,23 +36,225 @@
               <li><a class="dropdown-item" href="carreiras.html">Carreiras</a></li>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contato.html">Contato</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
         </ul>
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
+          <button class="btn btn-outline-light" type="submit">Buscar</button>
         </form>
       </div>
     </div>
   </nav>
-  <!-- Conteúdo da página -->
+
+  <!-- Conteúdo principal -->
   <div class="container my-5">
-    <h1 class="text-center mb-4">Para sua construção</h1>
-    <p class="lead text-center">Encontre cimento, areia, tijolos, telhas e argamassas com os melhores preços.</p>
-    <!-- Adicione aqui os produtos ou informações específicas desta categoria -->
+    <div class="row">
+      <!-- Filtros laterais -->
+      <aside class="col-md-3 mb-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h6 class="card-title">Ordenar por</h6>
+            <select class="form-select mb-3" id="sortSelect">
+              <option value="relevante">Mais relevantes</option>
+              <option value="menor">Menor preço</option>
+              <option value="maior">Maior preço</option>
+            </select>
+            <h6 class="card-title">Departamento</h6>
+            <div class="form-check">
+              <input class="form-check-input filtro-dep" type="checkbox" id="dep1" value="blocos" checked>
+              <label class="form-check-label" for="dep1">Blocos e Tijolos</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input filtro-dep" type="checkbox" id="dep2" value="cimento" checked>
+              <label class="form-check-label" for="dep2">Cimento</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input filtro-dep" type="checkbox" id="dep3" value="areia" checked>
+              <label class="form-check-label" for="dep3">Areia e Pedra</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input filtro-dep" type="checkbox" id="dep4" value="argamassa" checked>
+              <label class="form-check-label" for="dep4">Argamassa</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input filtro-dep" type="checkbox" id="dep5" value="ferro" checked>
+              <label class="form-check-label" for="dep5">Ferro e Aço</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input filtro-dep" type="checkbox" id="dep6" value="caixa" checked>
+              <label class="form-check-label" for="dep6">Caixa d'Água</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input filtro-dep" type="checkbox" id="dep7" value="telha" checked>
+              <label class="form-check-label" for="dep7">Telhas</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input filtro-dep" type="checkbox" id="dep8" value="escada" checked>
+              <label class="form-check-label" for="dep8">Escadas</label>
+            </div>
+            <hr>
+            <h6 class="card-title">Somente Ofertas</h6>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="ofertas">
+              <label class="form-check-label" for="ofertas">Ofertas</label>
+            </div>
+            <h6 class="card-title">Novidades</h6>
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="novidades">
+              <label class="form-check-label" for="novidades">Novidades</label>
+            </div>
+            <hr>
+            <h6 class="card-title">Preço</h6>
+            <div class="input-group mb-2">
+              <input type="number" class="form-control" placeholder="Mínimo" id="precoMin">
+              <span class="input-group-text">até</span>
+              <input type="number" class="form-control" placeholder="Máximo" id="precoMax">
+            </div>
+            <button class="btn btn-outline-primary btn-sm w-100" id="btnFiltrar">Filtrar</button>
+          </div>
+        </div>
+      </aside>
+      <!-- Grid de produtos -->
+      <section class="col-md-9">
+        <div class="row row-cols-1 row-cols-md-4 g-4" id="produtosGrid">
+          <!-- Produto 1 -->
+          <div class="col produto" data-dep="blocos" data-oferta="false" data-preco="0.51">
+            <div class="card h-100">
+              <img src="/img/bloco_ceramico.png" class="card-img-top" alt="Bloco Cerâmico">
+              <div class="card-body">
+                <h6 class="card-title">Bloco Cerâmico Vedação 9x19x19cm</h6>
+                <p class="card-text text-success fw-bold">R$ 0,51 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 89247186</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 2 -->
+          <div class="col produto" data-dep="blocos" data-oferta="true" data-preco="15.90">
+            <div class="card h-100">
+              <img src="/img/bloco_concreto.png" class="card-img-top" alt="Bloco de Concreto">
+              <div class="card-body">
+                <h6 class="card-title">Bloco de Concreto Celular 60x30x10cm</h6>
+                <p class="card-text text-success fw-bold">R$ 15,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 90619284</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 3 -->
+          <div class="col produto" data-dep="blocos" data-oferta="false" data-preco="1.00">
+            <div class="card h-100">
+              <img src="/img/tijolo_comum.png" class="card-img-top" alt="Tijolo Comum">
+              <div class="card-body">
+                <h6 class="card-title">Tijolo Comum Vermelho 8,7x4,3x18,6cm</h6>
+                <p class="card-text text-success fw-bold">R$ 1,00 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 85831844</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 4 -->
+          <div class="col produto" data-dep="blocos" data-oferta="false" data-preco="89.90">
+            <div class="card h-100">
+              <img src="/img/lajota.png" class="card-img-top" alt="Lajota Refratária">
+              <div class="card-body">
+                <h6 class="card-title">Lajota Refratária 11,5x23x2,5cm</h6>
+                <p class="card-text text-success fw-bold">R$ 89,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 86360106</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 5 -->
+          <div class="col produto" data-dep="cimento" data-oferta="true" data-preco="32.90">
+            <div class="card h-100">
+              <img src="/img/cimento.png" class="card-img-top" alt="Cimento CP II">
+              <div class="card-body">
+                <h6 class="card-title">Cimento CP II 50kg</h6>
+                <p class="card-text text-success fw-bold">R$ 32,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 12345678</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 6 -->
+          <div class="col produto" data-dep="areia" data-oferta="false" data-preco="14.90">
+            <div class="card h-100">
+              <img src="/img/areia.png" class="card-img-top" alt="Areia Média Ensacada">
+              <div class="card-body">
+                <h6 class="card-title">Areia Média Ensacada 20kg</h6>
+                <p class="card-text text-success fw-bold">R$ 14,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 23456789</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 7 -->
+          <div class="col produto" data-dep="areia" data-oferta="false" data-preco="16.90">
+            <div class="card h-100">
+              <img src="/img/pedra_brita.png" class="card-img-top" alt="Pedra Brita 20kg">
+              <div class="card-body">
+                <h6 class="card-title">Pedra Brita 20kg</h6>
+                <p class="card-text text-success fw-bold">R$ 16,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 34567890</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 8 -->
+          <div class="col produto" data-dep="argamassa" data-oferta="true" data-preco="18.90">
+            <div class="card h-100">
+              <img src="/img/argamassa.png" class="card-img-top" alt="Argamassa AC-I">
+              <div class="card-body">
+                <h6 class="card-title">Argamassa AC-I 20kg</h6>
+                <p class="card-text text-success fw-bold">R$ 18,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 45678901</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 9 -->
+          <div class="col produto" data-dep="ferro" data-oferta="false" data-preco="49.90">
+            <div class="card h-100">
+              <img src="/img/ferro.png" class="card-img-top" alt="Vergalhão CA-50">
+              <div class="card-body">
+                <h6 class="card-title">Vergalhão CA-50 8mm 12m</h6>
+                <p class="card-text text-success fw-bold">R$ 49,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 56789012</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 10 -->
+          <div class="col produto" data-dep="caixa" data-oferta="false" data-preco="299.90">
+            <div class="card h-100">
+              <img src="/img/caixa_agua.png" class="card-img-top" alt="Caixa d'Água 500L">
+              <div class="card-body">
+                <h6 class="card-title">Caixa d'Água 500L Fortlev</h6>
+                <p class="card-text text-success fw-bold">R$ 299,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 67890123</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 11 -->
+          <div class="col produto" data-dep="telha" data-oferta="true" data-preco="2.49">
+            <div class="card h-100">
+              <img src="/img/telha.png" class="card-img-top" alt="Telha Cerâmica">
+              <div class="card-body">
+                <h6 class="card-title">Telha Cerâmica Colonial</h6>
+                <p class="card-text text-success fw-bold">R$ 2,49 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 78901234</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Produto 12 -->
+          <div class="col produto" data-dep="escada" data-oferta="false" data-preco="129.90">
+            <div class="card h-100">
+              <img src="/img/escada.png" class="card-img-top" alt="Escada Alumínio">
+              <div class="card-body">
+                <h6 class="card-title">Escada Alumínio 5 Degraus</h6>
+                <p class="card-text text-success fw-bold">R$ 129,90 cada</p>
+                <p class="card-text"><small class="text-muted">Cód. 89012345</small></p>
+              </div>
+            </div>
+          </div>
+          <!-- Adicione mais produtos conforme necessário -->
+        </div>
+      </section>
+    </div>
   </div>
+
   <!-- Footer -->
   <footer class="text-center mt-5">
     <p>Nos siga nas redes sociais!</p>
@@ -68,5 +266,53 @@
     <p>© 2025 Casa Materiais de Construção - Todos os direitos reservados</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+// Função para filtrar produtos
+function filtrarProdutos() {
+  // Departamentos selecionados
+  const deps = Array.from(document.querySelectorAll('.filtro-dep:checked')).map(cb => cb.value);
+  // Somente ofertas
+  const somenteOfertas = document.getElementById('ofertas').checked;
+  // Preço mínimo e máximo
+  const precoMin = parseFloat(document.getElementById('precoMin').value) || 0;
+  const precoMax = parseFloat(document.getElementById('precoMax').value) || Infinity;
+
+  document.querySelectorAll('.produto').forEach(produto => {
+    const dep = produto.getAttribute('data-dep');
+    const oferta = produto.getAttribute('data-oferta') === 'true';
+    const preco = parseFloat(produto.getAttribute('data-preco'));
+
+    let mostrar = deps.includes(dep);
+    if (somenteOfertas) mostrar = mostrar && oferta;
+    if (preco < precoMin || preco > precoMax) mostrar = false;
+
+    produto.style.display = mostrar ? '' : 'none';
+  });
+}
+
+// Eventos dos filtros
+document.querySelectorAll('.filtro-dep, #ofertas').forEach(el => {
+  el.addEventListener('change', filtrarProdutos);
+});
+document.getElementById('btnFiltrar').addEventListener('click', function(e){
+  e.preventDefault();
+  filtrarProdutos();
+});
+
+// Ordenação por preço
+document.getElementById('sortSelect').addEventListener('change', function() {
+  const grid = document.getElementById('produtosGrid');
+  const produtos = Array.from(grid.querySelectorAll('.produto'));
+  const tipo = this.value;
+  produtos.sort((a, b) => {
+    const pa = parseFloat(a.getAttribute('data-preco'));
+    const pb = parseFloat(b.getAttribute('data-preco'));
+    if (tipo === 'menor') return pa - pb;
+    if (tipo === 'maior') return pb - pa;
+    return 0;
+  });
+  produtos.forEach(p => grid.appendChild(p));
+});
+</script>
 </body>
 </html>
