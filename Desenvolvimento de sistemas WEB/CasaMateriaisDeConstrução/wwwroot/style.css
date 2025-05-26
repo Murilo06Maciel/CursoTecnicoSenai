@@ -77,4 +77,28 @@ html, body {
     display: block;
   }
 
+  .card{
+    width: 300px;
+    height: 500px;
+  }
+
+  .conteudo {
+    width: 90%;              
+    max-width: 1000px;    
+    margin: 0 auto;        
+    padding: 20px;           
+  }
+
+  .publicidade{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .publicidade img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
 
